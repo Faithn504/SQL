@@ -31,4 +31,4 @@ SELECT * FROM store ORDER BY price ASC;
 
 #Displayed the number of each type of product
 
-SELECT type, COUNT(*) FROM store GROUP BY type;
+SELECT type, SUM(stock) FROM store GROUP BY type;
