@@ -1,0 +1,34 @@
+#create a grocery store database
+
+CREATE TABLE store 
+  (id INTEGER PRIMARY KEY, 
+  item TEXT, 
+  stock INTEGER, 
+  type TEXT, 
+  aisle INTEGER, 
+  price INTEGER);
+
+INSERT INTO store VALUES 
+  (1, "Red", 34, "I", 1, 15),
+  (2, "orange", 20, "I", 1, 15),
+  (3, "yellow", 15, "S", 2, 20),
+  (4, "green", 28, "I", 1, 15),
+  (5, "blue", 19, "S", 2, 20),
+  (6, "purple", 20, "S", 2, 25),
+  (7, "dog", 46, "S", 2, 15),
+  (8, "cat", 20, "I", 1, 25),
+  (9, "dragon", 22, "I", 1, 20),
+  (10, "spicy", 4, "S", 2, 15),
+  (11, "chicken", 30, "S", 2, 25),
+  (12, "sheep", 13, "I", 1, 20),
+  (13, "cow", 30, "I", 1, 20),
+  (14, "pig", 25, "S", 2, 25),
+  (15, "elephant", 0, "I", 1, 15);
+
+#Display database ordered by price
+
+SELECT * FROM store ORDER BY price ASC;
+
+#Displayed the number of each type of product
+
+SELECT type, COUNT(*) FROM store GROUP BY type;
