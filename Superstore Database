@@ -29,26 +29,23 @@ VALUES
 
 -- For this project, I used SQL to query the Superstore database to get information about items sold at the store and their prices. 
 
--- 1. Order items by price
+-- 1. Write a SQL query that orders the items by price.
 SELECT item_name, price
 FROM superstore
-ORDER BY price desc
+ORDER BY price
 ;
--- 2. show stat about item prices
-SELECT AVG(price)
+-- 2. Write a SQL query that will show a statistic about the item prices.
+SELECT AVG(price), category
 FROM superstore
+GROUP BY category
 ;
--- 3. stat about Kitchen Supplies
-SELECT AVG(price) 
+-- 3. Write a SQL query that will show a statistic about the price for items in the category of "Kitchen Supplies". 
+SELECT MAX(price), item_name, category
 FROM superstore
-WHERE category = 'Kitchen Supplies'
+WHERE category = "Kitchen Supplies"
 ;
--- 4. How many furnishings are in stock, how many cotton bedding set are in stock
-SELECT SUM(stock_quantity)
+-- 4. Write a SQL query that shows how much stock each category has.  
+SELECT SUM(stock_quantity), category
 FROM superstore
-WHERE category = 'Furnishings'
-;
-SELECT SUM(stock_quantity)
-FROM superstore
-WHERE item_name = 'Cotton Bedding Set'
-;
+GROUP BY category
+; 
